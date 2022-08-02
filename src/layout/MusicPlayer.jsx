@@ -17,6 +17,7 @@ const StyledDiv = styled.div`
   bottom: 0;
   z-index: 10;
   width: 100%;
+  min-width: 620px;
 `;
 
 export function MusicPlayer() {

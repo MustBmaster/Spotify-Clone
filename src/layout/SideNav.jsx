@@ -10,7 +10,9 @@ import {
   IconLibraryFill,
   IconAddPlaylist,
   IconLikedSong,
+  IconDownload,
 } from "../components/Common/Icons";
+import { Playlist } from "../components/Sidenav/Playlist";
 const StyledDiv = styled.div`
   position: relative;
   z-index: 3;
@@ -18,8 +20,8 @@ const StyledDiv = styled.div`
   flex-direction: column;
   width: 250px;
   padding-top: 24px;
-  min-height: 0;
-  height: 100vh;
+  min-height: 100vh;
+  height: calc(100% - 90px);
   flex: 1;
   background-color: #000;
 `;
@@ -50,6 +52,13 @@ export function SideNav() {
       </NavItem>
       <NavItem>
         <hr />
+      </NavItem>
+      <Playlist></Playlist>
+      
+    
+      <NavItem style={{ justifySelf: "flex-end" }}>
+        <IconDownload />
+        Install App
       </NavItem>
     </StyledDiv>
   );

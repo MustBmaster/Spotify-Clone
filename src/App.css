@@ -22,3 +22,7 @@ hr {
   background-color: #282828;
   height: 1px;
 }
+
+.App {
+  height: 100%;
+}
