@@ -15,7 +15,7 @@ const StyledDiv = styled.div`
   padding: 0 16px;
   position: fixed;
   bottom: 0;
-  z-index: 10;
+  z-index: 4;
   width: 100%;
   min-width: 620px;
 `;
@@ -42,7 +42,9 @@ export function MusicPlayer() {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       //tự động chuyển bài hát khi hết bài
-      if (audioRef.current.ended) nextBtnHandler();
+      if (audioRef.current.ended && isRepeat) {
+        audioRef.current.play();
+      } else if (audioRef.current.ended && !isRepeat) nextBtnHandler();
       else setTrackProgress(audioRef.current.currentTime);
       // console.log(audioRef.current.currentTime);
     }, [1000]);
@@ -52,6 +54,7 @@ export function MusicPlayer() {
   const onRepeat = () => {
     if (isRepeat) setIsRepeat(false);
     else setIsRepeat(true);
+    console.log(isRepeat);
   };
 
   //Nút xào bài hát
@@ -135,6 +138,8 @@ export function MusicPlayer() {
   useEffect(() => {
     audioRef.current.pause();
     audioRef.current = new Audio(audioSrc);
+    // giữ nguyên âm lượng từ state
+    audioRef.current.volume = volume;
     // logic của đoạn này chủ yếu cho lần đầu bắt buộc phải chạy vào cái else trước
     // vì nếu ban đầu mà để audioRef.current.play() cho lần khởi tạo đầu tiên sẽ báo exception
     if (isReady.current) {

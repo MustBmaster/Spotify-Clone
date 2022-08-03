@@ -21,7 +21,7 @@ const StyledDiv = styled.div`
   width: 250px;
   padding-top: 24px;
   min-height: 100vh;
-  height: calc(100% - 90px);
+  height: 100%;
   flex: 1;
   background-color: #000;
 `;
@@ -53,13 +53,26 @@ export function SideNav() {
       <NavItem>
         <hr />
       </NavItem>
-      <Playlist></Playlist>
-      
-    
-      <NavItem style={{ justifySelf: "flex-end" }}>
+      <Playlist>
+        <ul>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+          <li>Minh</li>
+        </ul>
+      </Playlist>
+      <NavItem>
         <IconDownload />
         Install App
       </NavItem>
+      <div style={{ height: "90px" }}></div>
     </StyledDiv>
   );
 }

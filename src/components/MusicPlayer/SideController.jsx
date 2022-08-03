@@ -6,6 +6,7 @@ import {
   IconVolumeMute,
   IconQueue,
   IconDevices,
+  IconMicro,
 } from "../Common/Icons";
 import { ProgressBar } from "./ProgressBar";
 import { StyledButton } from "../Common/StyledButton";
@@ -36,7 +37,7 @@ const VolumeBar = styled.div`
 export function SideController(props) {
   return (
     <StyledDiv>
-      <TbMicrophone2 />
+      <IconMicro />
       <IconQueue />
       <IconDevices />
       {/* <IconVolumeMin />
