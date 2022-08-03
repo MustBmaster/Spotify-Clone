@@ -63,9 +63,6 @@ export function SideNav() {
           <li>Minh</li>
           <li>Minh</li>
           <li>Minh</li>
-          <li>Minh</li>
-          <li>Minh</li>
-          <li>Minh</li>
         </ul>
       </Playlist>
       <NavItem>
